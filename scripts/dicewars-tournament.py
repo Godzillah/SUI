@@ -123,8 +123,8 @@ def main():
             p.kill()
 
     reporter.clean()
+    
     if args.save:
-
         with open(args.save, 'wb') as f:
             pickle.dump(all_games, f)
 
