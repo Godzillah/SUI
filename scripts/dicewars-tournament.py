@@ -11,6 +11,7 @@ import random
 import sys
 import pickle
 
+
 parser = ArgumentParser(prog='Dice_Wars')
 parser.add_argument('-p', '--port', help="Server port", type=int, default=5005)
 parser.add_argument('-a', '--address', help="Server address", default='127.0.0.1')
@@ -26,6 +27,7 @@ parser.add_argument('--save', help="Where to put pickled GameSummaries")
 parser.add_argument('--load', help="Which GameSummaries to start from")
 
 procs = []
+
 
 def signal_handler(signum, frame):
     """Handler for SIGCHLD signal that terminates server and clients
@@ -121,7 +123,6 @@ def main():
             p.kill()
 
     reporter.clean()
-
     if args.save:
 
         with open(args.save, 'wb') as f:
