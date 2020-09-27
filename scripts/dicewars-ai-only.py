@@ -3,7 +3,7 @@ import sys
 from signal import signal, SIGCHLD
 from argparse import ArgumentParser
 
-from dicewars.server.game.summary import get_win_rates
+from dicewars.server.summary import get_win_rates
 from utils import run_ai_only_game, ListStats, BoardDefinition
 
 

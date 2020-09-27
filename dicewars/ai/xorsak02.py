@@ -16,9 +16,7 @@ class AI:
         Get a random area. If it has a possible move, the agent will do it.
         If there are no more moves, the agent ends its turn.
         """
-        if nb_moves_this_turn == 2:
-            self.logger.debug("I'm too well behaved. Let others play now.")
-            return EndTurnCommand()
+        self.logger.debug("Hello----this is the DEBUG...")
 
         attacks = list(possible_attacks(board, self.player_name))
         if attacks:
