@@ -2,7 +2,7 @@ import numpy
 import logging
 
 from .utils import probability_of_successful_attack, sigmoid
-from .utils import possible_attacks
+from .utils import possible_attacks, effortless_target_areas
 
 from dicewars.client.ai_driver import BattleCommand, EndTurnCommand
 
@@ -80,12 +80,14 @@ class AI:
 
         features = []
 
-        # get features for player's score, dice, number of owned fields
+        # get features for player's score, dice, number of owned fields, sum of effortless targets to attack
         for p in self.players_order:
             score_player_value = self.get_score_by_player(p)
             dice_player_value = self.board.get_player_dice(p)
             owned_fields_player = len(self.board.get_player_areas(p))
-            sum_features_player = score_player_value + dice_player_value + owned_fields_player # get sum of features
+            effortless_target_areas_sum_player = effortless_target_areas(self.board, p)
+
+            sum_features_player = score_player_value + dice_player_value + owned_fields_player + effortless_target_areas_sum_player # get sum of features
             features.append(sum_features_player)
 
         win_prob = numpy.log(sigmoid(numpy.dot(numpy.array(features), self.weights)))
@@ -97,6 +99,8 @@ class AI:
             area_name = source.get_name()
             atk_power = source.get_dice()
 
+            target_power = target.get_dice()
+
             opponent_name = target.get_owner_name()
 
             increase_score = False
@@ -104,7 +108,9 @@ class AI:
             if area_name in self.largest_region:
                 increase_score = True
 
-            if increase_score or atk_power == 8:
+            atk_prob = probability_of_successful_attack(self.board, area_name, target.get_name())
+
+            if (increase_score or atk_power == 8) and (atk_prob >= 0.3):
                 new_features = []
                 for p in self.players_order:
                     idx = self.players_order.index(p)
@@ -116,7 +122,9 @@ class AI:
                         score_oponent_value = self.get_score_by_player(p, skip_area=target.get_name())
                         dice_oponent_value = self.board.get_player_dice(p)
                         owned_fields_oponent = len(self.board.get_player_areas(p))
-                        sum_features_oponent = score_oponent_value + dice_oponent_value + owned_fields_oponent
+                        effortless_target_areas_sum_oponent = effortless_target_areas(self.board, p)
+
+                        sum_features_oponent = score_oponent_value + dice_oponent_value + owned_fields_oponent + effortless_target_areas_sum_oponent
                         new_features.append(sum_features_oponent)
 
                     else:
@@ -125,8 +133,8 @@ class AI:
                 new_win_prob = numpy.log(sigmoid(numpy.dot(numpy.array(new_features), self.weights)))
 
                 improvement = new_win_prob - win_prob
-                
-                if improvement >= -1:
+
+                if improvement > -1:
                     turns.append([area_name, target.get_name(), improvement])
 
         return sorted(turns, key=lambda turn: turn[2], reverse=True)

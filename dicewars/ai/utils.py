@@ -181,3 +181,30 @@ def save_state(f, board, player_name, players_order):
     }
 
     pickle.dump(save_game, f)
+
+def effortless_target_areas(board, player_name):
+    '''
+    Get effortless target areas where target area has less dices than us -> it is good opportunity to attack
+
+    Parameters
+    ----------
+    board : Board
+        Board of game
+    player_name : int
+        Name of player
+
+    Returns
+    -------
+    effortless_target_areas_sum: int
+        Sum of all effortless target areas
+    '''
+    effortless_target_areas_sum = 0
+
+    for source, target in possible_attacks(board, player_name):
+        atk_power = source.get_dice()
+        target_power = target.get_dice()
+
+        if (atk_power > target_power):
+            effortless_target_areas_sum += 1
+
+    return effortless_target_areas_sum
