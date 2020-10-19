@@ -208,3 +208,29 @@ def effortless_target_areas(board, player_name):
             effortless_target_areas_sum += 1
 
     return effortless_target_areas_sum
+
+def get_player_largest_region(board, player_name):
+    """Get size of the largest region of player, including the areas within
+
+    Attributes
+    ----------
+    largest_region : list of int
+        Names of areas in the largest region
+    player_name : int
+        Name of player
+
+    Returns
+    -------
+    int
+        Number of areas in the largest region of actual player
+    """
+    largest_region = []
+
+    players_regions = board.get_players_regions(player_name)
+    max_region_size = max(len(region) for region in players_regions)
+    max_sized_regions = [region for region in players_regions if len(region) == max_region_size]
+
+    for region in max_sized_regions:
+        for area in region:
+            largest_region.append(area)
+    return max_region_size

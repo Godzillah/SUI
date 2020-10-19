@@ -2,7 +2,7 @@ import numpy
 import logging
 
 from .utils import probability_of_successful_attack, sigmoid
-from .utils import possible_attacks, effortless_target_areas
+from .utils import possible_attacks, effortless_target_areas, get_player_largest_region
 
 from dicewars.client.ai_driver import BattleCommand, EndTurnCommand
 
@@ -86,8 +86,9 @@ class AI:
             dice_player_value = self.board.get_player_dice(p)
             owned_fields_player = len(self.board.get_player_areas(p))
             effortless_target_areas_sum_player = effortless_target_areas(self.board, p)
+            largest_region_player = get_player_largest_region(self.board, p)
 
-            sum_features_player = score_player_value + dice_player_value + owned_fields_player + effortless_target_areas_sum_player # get sum of features
+            sum_features_player = score_player_value + dice_player_value + owned_fields_player + effortless_target_areas_sum_player + largest_region_player # get sum of features
             features.append(sum_features_player)
 
         win_prob = numpy.log(sigmoid(numpy.dot(numpy.array(features), self.weights)))
@@ -105,12 +106,12 @@ class AI:
 
             increase_score = False
 
-            if area_name in self.largest_region:
+            if area_name in self.largest_region: # increase score if actual player has the largest region
                 increase_score = True
 
             atk_prob = probability_of_successful_attack(self.board, area_name, target.get_name())
 
-            if (increase_score or atk_power == 8) and (atk_prob >= 0.3):
+            if (increase_score or atk_power == 8) and (atk_prob > 0.35):
                 new_features = []
                 for p in self.players_order:
                     idx = self.players_order.index(p)
@@ -123,8 +124,9 @@ class AI:
                         dice_oponent_value = self.board.get_player_dice(p)
                         owned_fields_oponent = len(self.board.get_player_areas(p))
                         effortless_target_areas_sum_oponent = effortless_target_areas(self.board, p)
+                        largest_region_oponent = get_player_largest_region(self.board, p)
 
-                        sum_features_oponent = score_oponent_value + dice_oponent_value + owned_fields_oponent + effortless_target_areas_sum_oponent
+                        sum_features_oponent = score_oponent_value + dice_oponent_value + owned_fields_oponent + effortless_target_areas_sum_oponent + largest_region_oponent
                         new_features.append(sum_features_oponent)
 
                     else:
