@@ -49,7 +49,8 @@ PLAYING_AIs = [
     'dt.wpm_c',
     # 'xlogin42',
     'xlogin00',
-    'xforto00',
+    #'xforto00',
+    'xforto00test',
 ]
 UNIVERSAL_SEED = 42
 

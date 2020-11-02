@@ -1,0 +1,2090 @@
+DEBUG:SERVER:Command line arguments: Namespace(address='127.0.0.1', area_assignment='orig', board=149, debug='DEBUG', dice_assignment='flat', fixed=42, number_of_players=4, order=['dt.rand (AI)', 'xforto00test (AI)', 'dt.wpm_c (AI)', 'dt.ste (AI)'], ownership=42, port=5005, strength=42)
+DEBUG:SERVER:Server socket at 127.0.0.1:5005
+DEBUG:SERVER:Current player: 3
+DEBUG:SERVER:Player order [3, 2, 4, 1]
+DEBUG:SERVER:Waiting for clients to connect
+INFO:SERVER:Assigning socket <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5005), raddr=('127.0.0.1', 59012)> with IP 127.0.0.1:59012 to player 1
+DEBUG:SERVER:Got message from client 1; type: client_desc
+INFO:SERVER:Assigning socket <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5005), raddr=('127.0.0.1', 59014)> with IP 127.0.0.1:59014 to player 2
+DEBUG:SERVER:Got message from client 2; type: client_desc
+INFO:SERVER:Assigning socket <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5005), raddr=('127.0.0.1', 59016)> with IP 127.0.0.1:59016 to player 3
+DEBUG:SERVER:Got message from client 3; type: client_desc
+INFO:SERVER:Assigning socket <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5005), raddr=('127.0.0.1', 59018)> with IP 127.0.0.1:59018 to player 4
+DEBUG:SERVER:Got message from client 4; type: client_desc
+DEBUG:SERVER:Successfully assigned clients to all players
+DEBUG:SERVER:Current player: 1
+INFO:SERVER:Player order: [(1, 'dt.rand (AI)'), (2, 'xforto00test (AI)'), (3, 'dt.wpm_c (AI)'), (4, 'dt.ste (AI)')]
+DEBUG:SERVER:Board initialized
+DEBUG:SERVER:Sending msg type 'game_start' to client 3
+DEBUG:SERVER:Sending msg type 'game_start' to client 2
+DEBUG:SERVER:Sending msg type 'game_start' to client 4
+DEBUG:SERVER:Sending msg type 'game_start' to client 1
+DEBUG:SERVER:Sending msg type 'game_state' to client 1
+DEBUG:SERVER:Sending msg type 'game_state' to client 2
+DEBUG:SERVER:Sending msg type 'game_state' to client 3
+DEBUG:SERVER:Sending msg type 'game_state' to client 4
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 20, 'dice': 1, 'owner': 1, 'pwr': 6}, 'def': {'name': 17, 'dice': 3, 'owner': 4, 'pwr': 13}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 16, 'dice': 1, 'owner': 1, 'pwr': 12}, 'def': {'name': 5, 'dice': 2, 'owner': 1, 'pwr': 10}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 11, 'dice': 1, 'owner': 1, 'pwr': 4}, 'def': {'name': 24, 'dice': 3, 'owner': 2, 'pwr': 12}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 29, 'dice': 1, 'owner': 1, 'pwr': 8}, 'def': {'name': 7, 'dice': 3, 'owner': 4, 'pwr': 18}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 3, 'dice': 1, 'owner': 1, 'pwr': 11}, 'def': {'name': 1, 'dice': 3, 'owner': 3, 'pwr': 12}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 14, 'dice': 1, 'owner': 1, 'pwr': 9}, 'def': {'name': 18, 'dice': 3, 'owner': 2, 'pwr': 10}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 21, 'dice': 1, 'owner': 1, 'pwr': 7}, 'def': {'name': 27, 'dice': 2, 'owner': 1, 'pwr': 6}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 27, 'dice': 1, 'owner': 1, 'pwr': 4}, 'def': {'name': 22, 'dice': 3, 'owner': 3, 'pwr': 11}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 6, 'dice': 1, 'owner': 1, 'pwr': 11}, 'def': {'name': 9, 'dice': 2, 'owner': 1, 'pwr': 10}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 5, 'dice': 1, 'owner': 1, 'pwr': 6}, 'def': {'name': 2, 'dice': 3, 'owner': 2, 'pwr': 14}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 9, 'dice': 1, 'owner': 1, 'pwr': 8}, 'def': {'name': 4, 'dice': 3, 'owner': 2, 'pwr': 9}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: end_turn
+DEBUG:SERVER:Current player: 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 10, 'dice': 1, 'owner': 2, 'pwr': 11}, 'def': {'name': 3, 'dice': 2, 'owner': 2, 'pwr': 6}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 2, 'dice': 1, 'owner': 2, 'pwr': 8}, 'def': {'name': 1, 'dice': 3, 'owner': 3, 'pwr': 11}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 4, 'dice': 1, 'owner': 2, 'pwr': 15}, 'def': {'name': 9, 'dice': 2, 'owner': 2, 'pwr': 6}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 9, 'dice': 1, 'owner': 2, 'pwr': 6}, 'def': {'name': 6, 'dice': 1, 'owner': 1, 'pwr': 6}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 24, 'dice': 1, 'owner': 2, 'pwr': 13}, 'def': {'name': 11, 'dice': 2, 'owner': 2, 'pwr': 2}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 26, 'dice': 1, 'owner': 2, 'pwr': 10}, 'def': {'name': 28, 'dice': 3, 'owner': 3, 'pwr': 15}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: end_turn
+DEBUG:SERVER:Current player: 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 1, 'dice': 1, 'owner': 3, 'pwr': 6}, 'def': {'name': 10, 'dice': 2, 'owner': 3, 'pwr': 5}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 28, 'dice': 1, 'owner': 3, 'pwr': 11}, 'def': {'name': 26, 'dice': 2, 'owner': 3, 'pwr': 6}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 22, 'dice': 1, 'owner': 3, 'pwr': 14}, 'def': {'name': 27, 'dice': 2, 'owner': 3, 'pwr': 4}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 12, 'dice': 1, 'owner': 3, 'pwr': 7}, 'def': {'name': 14, 'dice': 2, 'owner': 1, 'pwr': 8}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: end_turn
+DEBUG:SERVER:Current player: 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 17, 'dice': 1, 'owner': 4, 'pwr': 7}, 'def': {'name': 20, 'dice': 2, 'owner': 4, 'pwr': 5}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 8, 'dice': 1, 'owner': 4, 'pwr': 6}, 'def': {'name': 12, 'dice': 2, 'owner': 4, 'pwr': 1}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: end_turn
+DEBUG:SERVER:Current player: 1
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 5, 'dice': 1, 'owner': 1, 'pwr': 12}, 'def': {'name': 2, 'dice': 3, 'owner': 2, 'pwr': 13}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 29, 'dice': 1, 'owner': 1, 'pwr': 14}, 'def': {'name': 27, 'dice': 2, 'owner': 1, 'pwr': 7}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 14, 'dice': 1, 'owner': 1, 'pwr': 6}, 'def': {'name': 18, 'dice': 4, 'owner': 2, 'pwr': 17}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 27, 'dice': 1, 'owner': 1, 'pwr': 8}, 'def': {'name': 22, 'dice': 1, 'owner': 1, 'pwr': 2}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: end_turn
+DEBUG:SERVER:Current player: 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 2, 'dice': 1, 'owner': 2, 'pwr': 6}, 'def': {'name': 1, 'dice': 2, 'owner': 2, 'pwr': 3}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 1, 'dice': 1, 'owner': 2, 'pwr': 5}, 'def': {'name': 29, 'dice': 1, 'owner': 2, 'pwr': 3}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 3, 'dice': 1, 'owner': 2, 'pwr': 6}, 'def': {'name': 10, 'dice': 2, 'owner': 3, 'pwr': 7}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: end_turn
+DEBUG:SERVER:Current player: 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 10, 'dice': 1, 'owner': 3, 'pwr': 7}, 'def': {'name': 1, 'dice': 1, 'owner': 3, 'pwr': 3}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: end_turn
+DEBUG:SERVER:Current player: 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 25, 'dice': 1, 'owner': 4, 'pwr': 25}, 'def': {'name': 28, 'dice': 5, 'owner': 4, 'pwr': 6}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 12, 'dice': 1, 'owner': 4, 'pwr': 19}, 'def': {'name': 22, 'dice': 3, 'owner': 4, 'pwr': 3}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 7, 'dice': 1, 'owner': 4, 'pwr': 13}, 'def': {'name': 1, 'dice': 2, 'owner': 4, 'pwr': 1}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 28, 'dice': 1, 'owner': 4, 'pwr': 9}, 'def': {'name': 26, 'dice': 4, 'owner': 3, 'pwr': 17}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: end_turn
+DEBUG:SERVER:Current player: 1
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 27, 'dice': 1, 'owner': 1, 'pwr': 11}, 'def': {'name': 22, 'dice': 4, 'owner': 4, 'pwr': 13}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 5, 'dice': 1, 'owner': 1, 'pwr': 11}, 'def': {'name': 29, 'dice': 1, 'owner': 1, 'pwr': 5}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 6, 'dice': 1, 'owner': 1, 'pwr': 10}, 'def': {'name': 9, 'dice': 2, 'owner': 1, 'pwr': 7}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 9, 'dice': 1, 'owner': 1, 'pwr': 7}, 'def': {'name': 4, 'dice': 3, 'owner': 2, 'pwr': 11}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: end_turn
+DEBUG:SERVER:Current player: 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 3, 'dice': 1, 'owner': 2, 'pwr': 3}, 'def': {'name': 10, 'dice': 1, 'owner': 2, 'pwr': 2}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 4, 'dice': 1, 'owner': 2, 'pwr': 11}, 'def': {'name': 9, 'dice': 2, 'owner': 2, 'pwr': 8}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 9, 'dice': 1, 'owner': 2, 'pwr': 7}, 'def': {'name': 6, 'dice': 1, 'owner': 2, 'pwr': 3}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 11, 'dice': 1, 'owner': 2, 'pwr': 17}, 'def': {'name': 26, 'dice': 4, 'owner': 2, 'pwr': 9}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 26, 'dice': 1, 'owner': 2, 'pwr': 14}, 'def': {'name': 28, 'dice': 3, 'owner': 2, 'pwr': 6}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 28, 'dice': 1, 'owner': 2, 'pwr': 7}, 'def': {'name': 25, 'dice': 2, 'owner': 2, 'pwr': 5}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 25, 'dice': 1, 'owner': 2, 'pwr': 7}, 'def': {'name': 20, 'dice': 2, 'owner': 4, 'pwr': 7}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: end_turn
+DEBUG:SERVER:Current player: 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 13, 'dice': 1, 'owner': 3, 'pwr': 18}, 'def': {'name': 11, 'dice': 4, 'owner': 3, 'pwr': 9}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 11, 'dice': 1, 'owner': 3, 'pwr': 11}, 'def': {'name': 10, 'dice': 3, 'owner': 3, 'pwr': 10}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 10, 'dice': 1, 'owner': 3, 'pwr': 8}, 'def': {'name': 3, 'dice': 2, 'owner': 3, 'pwr': 1}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 3, 'dice': 1, 'owner': 3, 'pwr': 3}, 'def': {'name': 4, 'dice': 1, 'owner': 2, 'pwr': 5}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: end_turn
+DEBUG:SERVER:Current player: 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 15, 'dice': 1, 'owner': 4, 'pwr': 17}, 'def': {'name': 25, 'dice': 3, 'owner': 4, 'pwr': 6}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 23, 'dice': 1, 'owner': 4, 'pwr': 16}, 'def': {'name': 28, 'dice': 3, 'owner': 4, 'pwr': 5}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 1, 'dice': 1, 'owner': 4, 'pwr': 19}, 'def': {'name': 2, 'dice': 4, 'owner': 4, 'pwr': 11}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 2, 'dice': 1, 'owner': 4, 'pwr': 15}, 'def': {'name': 3, 'dice': 3, 'owner': 4, 'pwr': 9}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 3, 'dice': 1, 'owner': 4, 'pwr': 8}, 'def': {'name': 4, 'dice': 2, 'owner': 4, 'pwr': 1}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 4, 'dice': 1, 'owner': 4, 'pwr': 9}, 'def': {'name': 9, 'dice': 1, 'owner': 4, 'pwr': 6}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 28, 'dice': 1, 'owner': 4, 'pwr': 8}, 'def': {'name': 26, 'dice': 2, 'owner': 2, 'pwr': 8}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: end_turn
+DEBUG:SERVER:Current player: 1
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 5, 'dice': 1, 'owner': 1, 'pwr': 11}, 'def': {'name': 2, 'dice': 1, 'owner': 1, 'pwr': 6}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 14, 'dice': 1, 'owner': 1, 'pwr': 11}, 'def': {'name': 12, 'dice': 5, 'owner': 4, 'pwr': 15}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: end_turn
+DEBUG:SERVER:Current player: 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 18, 'dice': 1, 'owner': 2, 'pwr': 33}, 'def': {'name': 14, 'dice': 7, 'owner': 2, 'pwr': 3}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 14, 'dice': 1, 'owner': 2, 'pwr': 24}, 'def': {'name': 12, 'dice': 6, 'owner': 2, 'pwr': 10}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 12, 'dice': 1, 'owner': 2, 'pwr': 26}, 'def': {'name': 8, 'dice': 5, 'owner': 2, 'pwr': 16}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 8, 'dice': 1, 'owner': 2, 'pwr': 15}, 'def': {'name': 7, 'dice': 4, 'owner': 2, 'pwr': 14}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 7, 'dice': 1, 'owner': 2, 'pwr': 9}, 'def': {'name': 1, 'dice': 3, 'owner': 2, 'pwr': 6}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 1, 'dice': 1, 'owner': 2, 'pwr': 6}, 'def': {'name': 2, 'dice': 2, 'owner': 1, 'pwr': 8}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 19, 'dice': 1, 'owner': 2, 'pwr': 15}, 'def': {'name': 17, 'dice': 3, 'owner': 2, 'pwr': 4}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 17, 'dice': 1, 'owner': 2, 'pwr': 13}, 'def': {'name': 15, 'dice': 2, 'owner': 2, 'pwr': 2}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 15, 'dice': 1, 'owner': 2, 'pwr': 4}, 'def': {'name': 11, 'dice': 2, 'owner': 3, 'pwr': 5}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 26, 'dice': 1, 'owner': 2, 'pwr': 8}, 'def': {'name': 11, 'dice': 1, 'owner': 2, 'pwr': 7}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 24, 'dice': 1, 'owner': 2, 'pwr': 14}, 'def': {'name': 10, 'dice': 2, 'owner': 2, 'pwr': 3}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: end_turn
+DEBUG:SERVER:Current player: 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: end_turn
+DEBUG:SERVER:Current player: 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 22, 'dice': 1, 'owner': 4, 'pwr': 14}, 'def': {'name': 12, 'dice': 4, 'owner': 4, 'pwr': 6}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 25, 'dice': 1, 'owner': 4, 'pwr': 10}, 'def': {'name': 17, 'dice': 3, 'owner': 4, 'pwr': 3}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 17, 'dice': 1, 'owner': 4, 'pwr': 15}, 'def': {'name': 19, 'dice': 2, 'owner': 4, 'pwr': 6}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 12, 'dice': 1, 'owner': 4, 'pwr': 10}, 'def': {'name': 8, 'dice': 3, 'owner': 4, 'pwr': 3}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 28, 'dice': 1, 'owner': 4, 'pwr': 11}, 'def': {'name': 26, 'dice': 3, 'owner': 4, 'pwr': 1}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 8, 'dice': 1, 'owner': 4, 'pwr': 12}, 'def': {'name': 7, 'dice': 3, 'owner': 2, 'pwr': 13}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 3, 'dice': 1, 'owner': 4, 'pwr': 11}, 'def': {'name': 2, 'dice': 2, 'owner': 4, 'pwr': 9}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: end_turn
+DEBUG:SERVER:Current player: 1
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 5, 'dice': 1, 'owner': 1, 'pwr': 12}, 'def': {'name': 6, 'dice': 2, 'owner': 2, 'pwr': 12}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 27, 'dice': 1, 'owner': 1, 'pwr': 5}, 'def': {'name': 22, 'dice': 1, 'owner': 1, 'pwr': 4}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: end_turn
+DEBUG:SERVER:Current player: 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 7, 'dice': 1, 'owner': 2, 'pwr': 10}, 'def': {'name': 8, 'dice': 2, 'owner': 2, 'pwr': 5}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 8, 'dice': 1, 'owner': 2, 'pwr': 9}, 'def': {'name': 12, 'dice': 1, 'owner': 2, 'pwr': 7}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 10, 'dice': 1, 'owner': 2, 'pwr': 13}, 'def': {'name': 3, 'dice': 2, 'owner': 2, 'pwr': 9}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 3, 'dice': 1, 'owner': 2, 'pwr': 10}, 'def': {'name': 2, 'dice': 2, 'owner': 4, 'pwr': 10}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 15, 'dice': 1, 'owner': 2, 'pwr': 8}, 'def': {'name': 25, 'dice': 2, 'owner': 4, 'pwr': 10}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: end_turn
+DEBUG:SERVER:Current player: 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 13, 'dice': 1, 'owner': 3, 'pwr': 15}, 'def': {'name': 24, 'dice': 3, 'owner': 3, 'pwr': 8}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 24, 'dice': 1, 'owner': 3, 'pwr': 15}, 'def': {'name': 10, 'dice': 2, 'owner': 3, 'pwr': 2}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 10, 'dice': 1, 'owner': 3, 'pwr': 7}, 'def': {'name': 1, 'dice': 1, 'owner': 3, 'pwr': 3}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: end_turn
+DEBUG:SERVER:Current player: 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: end_turn
+DEBUG:SERVER:Current player: 1
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 22, 'dice': 1, 'owner': 1, 'pwr': 10}, 'def': {'name': 14, 'dice': 3, 'owner': 2, 'pwr': 15}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: end_turn
+DEBUG:SERVER:Current player: 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 8, 'dice': 1, 'owner': 2, 'pwr': 4}, 'def': {'name': 17, 'dice': 2, 'owner': 4, 'pwr': 12}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 12, 'dice': 1, 'owner': 2, 'pwr': 6}, 'def': {'name': 22, 'dice': 3, 'owner': 1, 'pwr': 10}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 14, 'dice': 1, 'owner': 2, 'pwr': 10}, 'def': {'name': 22, 'dice': 2, 'owner': 2, 'pwr': 8}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: end_turn
+DEBUG:SERVER:Current player: 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: end_turn
+DEBUG:SERVER:Current player: 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 19, 'dice': 1, 'owner': 4, 'pwr': 12}, 'def': {'name': 8, 'dice': 2, 'owner': 4, 'pwr': 4}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 9, 'dice': 1, 'owner': 4, 'pwr': 11}, 'def': {'name': 6, 'dice': 3, 'owner': 2, 'pwr': 12}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: end_turn
+DEBUG:SERVER:Current player: 1
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 29, 'dice': 1, 'owner': 1, 'pwr': 12}, 'def': {'name': 7, 'dice': 3, 'owner': 1, 'pwr': 4}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 7, 'dice': 1, 'owner': 1, 'pwr': 12}, 'def': {'name': 8, 'dice': 2, 'owner': 1, 'pwr': 8}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 8, 'dice': 1, 'owner': 1, 'pwr': 3}, 'def': {'name': 19, 'dice': 1, 'owner': 4, 'pwr': 4}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 5, 'dice': 1, 'owner': 1, 'pwr': 7}, 'def': {'name': 2, 'dice': 4, 'owner': 4, 'pwr': 14}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 27, 'dice': 1, 'owner': 1, 'pwr': 10}, 'def': {'name': 22, 'dice': 2, 'owner': 2, 'pwr': 11}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: end_turn
+DEBUG:SERVER:Current player: 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 22, 'dice': 1, 'owner': 2, 'pwr': 9}, 'def': {'name': 27, 'dice': 1, 'owner': 2, 'pwr': 6}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: end_turn
+DEBUG:SERVER:Current player: 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 1, 'dice': 1, 'owner': 3, 'pwr': 13}, 'def': {'name': 7, 'dice': 3, 'owner': 3, 'pwr': 9}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 7, 'dice': 1, 'owner': 3, 'pwr': 16}, 'def': {'name': 8, 'dice': 2, 'owner': 3, 'pwr': 2}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 8, 'dice': 1, 'owner': 3, 'pwr': 6}, 'def': {'name': 12, 'dice': 1, 'owner': 3, 'pwr': 5}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: end_turn
+DEBUG:SERVER:Current player: 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 25, 'dice': 1, 'owner': 4, 'pwr': 20}, 'def': {'name': 15, 'dice': 6, 'owner': 4, 'pwr': 16}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: end_turn
+DEBUG:SERVER:Current player: 1
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 29, 'dice': 1, 'owner': 1, 'pwr': 12}, 'def': {'name': 27, 'dice': 2, 'owner': 1, 'pwr': 1}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 5, 'dice': 1, 'owner': 1, 'pwr': 5}, 'def': {'name': 2, 'dice': 4, 'owner': 4, 'pwr': 14}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 27, 'dice': 1, 'owner': 1, 'pwr': 3}, 'def': {'name': 22, 'dice': 2, 'owner': 2, 'pwr': 3}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: end_turn
+DEBUG:SERVER:Current player: 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 14, 'dice': 1, 'owner': 2, 'pwr': 12}, 'def': {'name': 12, 'dice': 2, 'owner': 2, 'pwr': 3}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 12, 'dice': 1, 'owner': 2, 'pwr': 5}, 'def': {'name': 8, 'dice': 2, 'owner': 3, 'pwr': 10}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 22, 'dice': 1, 'owner': 2, 'pwr': 12}, 'def': {'name': 27, 'dice': 1, 'owner': 2, 'pwr': 1}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: end_turn
+DEBUG:SERVER:Current player: 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 8, 'dice': 1, 'owner': 3, 'pwr': 11}, 'def': {'name': 12, 'dice': 1, 'owner': 3, 'pwr': 4}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 7, 'dice': 1, 'owner': 3, 'pwr': 13}, 'def': {'name': 29, 'dice': 3, 'owner': 1, 'pwr': 17}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: end_turn
+DEBUG:SERVER:Current player: 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 15, 'dice': 1, 'owner': 4, 'pwr': 30}, 'def': {'name': 11, 'dice': 7, 'owner': 4, 'pwr': 23}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 11, 'dice': 1, 'owner': 4, 'pwr': 28}, 'def': {'name': 13, 'dice': 6, 'owner': 4, 'pwr': 19}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 13, 'dice': 1, 'owner': 4, 'pwr': 27}, 'def': {'name': 24, 'dice': 5, 'owner': 4, 'pwr': 15}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 17, 'dice': 1, 'owner': 4, 'pwr': 9}, 'def': {'name': 8, 'dice': 3, 'owner': 3, 'pwr': 9}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: end_turn
+DEBUG:SERVER:Current player: 1
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 29, 'dice': 1, 'owner': 1, 'pwr': 9}, 'def': {'name': 7, 'dice': 2, 'owner': 1, 'pwr': 3}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 21, 'dice': 1, 'owner': 1, 'pwr': 31}, 'def': {'name': 27, 'dice': 7, 'owner': 1, 'pwr': 2}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 5, 'dice': 1, 'owner': 1, 'pwr': 13}, 'def': {'name': 2, 'dice': 5, 'owner': 4, 'pwr': 21}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 7, 'dice': 1, 'owner': 1, 'pwr': 12}, 'def': {'name': 1, 'dice': 1, 'owner': 1, 'pwr': 8}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 27, 'dice': 1, 'owner': 1, 'pwr': 19}, 'def': {'name': 22, 'dice': 6, 'owner': 1, 'pwr': 3}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 22, 'dice': 1, 'owner': 1, 'pwr': 28}, 'def': {'name': 12, 'dice': 5, 'owner': 1, 'pwr': 13}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 12, 'dice': 1, 'owner': 1, 'pwr': 21}, 'def': {'name': 8, 'dice': 4, 'owner': 1, 'pwr': 9}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 8, 'dice': 1, 'owner': 1, 'pwr': 11}, 'def': {'name': 17, 'dice': 3, 'owner': 1, 'pwr': 4}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 17, 'dice': 1, 'owner': 1, 'pwr': 17}, 'def': {'name': 20, 'dice': 8, 'owner': 4, 'pwr': 30}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: end_turn
+DEBUG:SERVER:Current player: 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 14, 'dice': 1, 'owner': 2, 'pwr': 5}, 'def': {'name': 12, 'dice': 1, 'owner': 2, 'pwr': 2}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: end_turn
+DEBUG:SERVER:Current player: 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 10, 'dice': 1, 'owner': 3, 'pwr': 14}, 'def': {'name': 1, 'dice': 4, 'owner': 3, 'pwr': 8}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 1, 'dice': 1, 'owner': 3, 'pwr': 9}, 'def': {'name': 7, 'dice': 3, 'owner': 3, 'pwr': 4}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: end_turn
+DEBUG:SERVER:Current player: 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 20, 'dice': 1, 'owner': 4, 'pwr': 27}, 'def': {'name': 17, 'dice': 7, 'owner': 4, 'pwr': 5}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 17, 'dice': 1, 'owner': 4, 'pwr': 21}, 'def': {'name': 8, 'dice': 6, 'owner': 4, 'pwr': 12}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 8, 'dice': 1, 'owner': 4, 'pwr': 25}, 'def': {'name': 12, 'dice': 5, 'owner': 4, 'pwr': 7}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 12, 'dice': 1, 'owner': 4, 'pwr': 22}, 'def': {'name': 22, 'dice': 4, 'owner': 4, 'pwr': 9}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 2, 'dice': 1, 'owner': 4, 'pwr': 14}, 'def': {'name': 29, 'dice': 4, 'owner': 4, 'pwr': 9}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 22, 'dice': 1, 'owner': 4, 'pwr': 8}, 'def': {'name': 27, 'dice': 2, 'owner': 1, 'pwr': 10}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 29, 'dice': 1, 'owner': 4, 'pwr': 13}, 'def': {'name': 27, 'dice': 3, 'owner': 4, 'pwr': 5}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 24, 'dice': 1, 'owner': 4, 'pwr': 26}, 'def': {'name': 10, 'dice': 5, 'owner': 4, 'pwr': 11}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 10, 'dice': 1, 'owner': 4, 'pwr': 18}, 'def': {'name': 3, 'dice': 6, 'owner': 2, 'pwr': 20}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: end_turn
+DEBUG:SERVER:Current player: 1
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 5, 'dice': 1, 'owner': 1, 'pwr': 6}, 'def': {'name': 2, 'dice': 1, 'owner': 1, 'pwr': 4}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 21, 'dice': 1, 'owner': 1, 'pwr': 9}, 'def': {'name': 29, 'dice': 1, 'owner': 1, 'pwr': 8}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: end_turn
+DEBUG:SERVER:Current player: 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 14, 'dice': 1, 'owner': 2, 'pwr': 7}, 'def': {'name': 12, 'dice': 1, 'owner': 2, 'pwr': 3}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: end_turn
+DEBUG:SERVER:Current player: 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 7, 'dice': 1, 'owner': 3, 'pwr': 15}, 'def': {'name': 29, 'dice': 2, 'owner': 3, 'pwr': 3}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: end_turn
+DEBUG:SERVER:Current player: 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 22, 'dice': 1, 'owner': 4, 'pwr': 11}, 'def': {'name': 12, 'dice': 2, 'owner': 4, 'pwr': 7}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: end_turn
+DEBUG:SERVER:Current player: 1
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 21, 'dice': 1, 'owner': 1, 'pwr': 12}, 'def': {'name': 27, 'dice': 5, 'owner': 4, 'pwr': 16}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 2, 'dice': 1, 'owner': 1, 'pwr': 13}, 'def': {'name': 29, 'dice': 3, 'owner': 3, 'pwr': 14}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 5, 'dice': 1, 'owner': 1, 'pwr': 3}, 'def': {'name': 6, 'dice': 5, 'owner': 2, 'pwr': 17}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: end_turn
+DEBUG:SERVER:Current player: 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: end_turn
+DEBUG:SERVER:Current player: 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 1, 'dice': 1, 'owner': 3, 'pwr': 11}, 'def': {'name': 2, 'dice': 2, 'owner': 3, 'pwr': 5}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 29, 'dice': 1, 'owner': 3, 'pwr': 7}, 'def': {'name': 5, 'dice': 2, 'owner': 1, 'pwr': 7}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 3
+DEBUG:SERVER:Handling player 3 (dt.wpm_c (AI)) turn
+DEBUG:SERVER:Got message from client 3; type: end_turn
+DEBUG:SERVER:Current player: 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 27, 'dice': 1, 'owner': 4, 'pwr': 18}, 'def': {'name': 29, 'dice': 4, 'owner': 4, 'pwr': 11}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 8, 'dice': 1, 'owner': 4, 'pwr': 18}, 'def': {'name': 7, 'dice': 3, 'owner': 4, 'pwr': 6}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: end_turn
+DEBUG:SERVER:Current player: 1
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 5, 'dice': 1, 'owner': 1, 'pwr': 8}, 'def': {'name': 29, 'dice': 4, 'owner': 4, 'pwr': 13}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 21, 'dice': 1, 'owner': 1, 'pwr': 8}, 'def': {'name': 29, 'dice': 4, 'owner': 4, 'pwr': 20}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: end_turn
+DEBUG:SERVER:Current player: 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 14, 'dice': 1, 'owner': 2, 'pwr': 3}, 'def': {'name': 22, 'dice': 2, 'owner': 4, 'pwr': 10}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 3, 'dice': 1, 'owner': 2, 'pwr': 25}, 'def': {'name': 1, 'dice': 7, 'owner': 2, 'pwr': 2}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+INFO:SERVER:Eliminated player 3 (dt.wpm_c (AI))
+DEBUG:SERVER:Battle result: {'atk': {'name': 1, 'dice': 1, 'owner': 2, 'pwr': 23}, 'def': {'name': 2, 'dice': 6, 'owner': 2, 'pwr': 15}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 2, 'dice': 1, 'owner': 2, 'pwr': 25}, 'def': {'name': 29, 'dice': 5, 'owner': 2, 'pwr': 19}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 29, 'dice': 1, 'owner': 2, 'pwr': 14}, 'def': {'name': 22, 'dice': 4, 'owner': 2, 'pwr': 12}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 22, 'dice': 1, 'owner': 2, 'pwr': 12}, 'def': {'name': 27, 'dice': 3, 'owner': 2, 'pwr': 4}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 27, 'dice': 1, 'owner': 2, 'pwr': 13}, 'def': {'name': 21, 'dice': 2, 'owner': 2, 'pwr': 5}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: end_turn
+DEBUG:SERVER:Current player: 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 4, 'dice': 1, 'owner': 4, 'pwr': 30}, 'def': {'name': 3, 'dice': 7, 'owner': 4, 'pwr': 2}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 3, 'dice': 1, 'owner': 4, 'pwr': 25}, 'def': {'name': 1, 'dice': 6, 'owner': 4, 'pwr': 9}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 1, 'dice': 1, 'owner': 4, 'pwr': 21}, 'def': {'name': 2, 'dice': 5, 'owner': 4, 'pwr': 3}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 2, 'dice': 1, 'owner': 4, 'pwr': 20}, 'def': {'name': 29, 'dice': 4, 'owner': 4, 'pwr': 8}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 29, 'dice': 1, 'owner': 4, 'pwr': 15}, 'def': {'name': 22, 'dice': 4, 'owner': 2, 'pwr': 19}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: end_turn
+DEBUG:SERVER:Current player: 1
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 5, 'dice': 1, 'owner': 1, 'pwr': 13}, 'def': {'name': 29, 'dice': 2, 'owner': 1, 'pwr': 9}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 29, 'dice': 1, 'owner': 1, 'pwr': 12}, 'def': {'name': 27, 'dice': 1, 'owner': 1, 'pwr': 6}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 16, 'dice': 1, 'owner': 1, 'pwr': 29}, 'def': {'name': 21, 'dice': 7, 'owner': 1, 'pwr': 6}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: end_turn
+DEBUG:SERVER:Current player: 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 22, 'dice': 1, 'owner': 2, 'pwr': 11}, 'def': {'name': 27, 'dice': 3, 'owner': 2, 'pwr': 8}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 27, 'dice': 1, 'owner': 2, 'pwr': 10}, 'def': {'name': 29, 'dice': 2, 'owner': 2, 'pwr': 7}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 29, 'dice': 1, 'owner': 2, 'pwr': 9}, 'def': {'name': 1, 'dice': 1, 'owner': 2, 'pwr': 3}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 6, 'dice': 1, 'owner': 2, 'pwr': 28}, 'def': {'name': 5, 'dice': 7, 'owner': 2, 'pwr': 9}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 5, 'dice': 1, 'owner': 2, 'pwr': 18}, 'def': {'name': 2, 'dice': 6, 'owner': 2, 'pwr': 4}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 2, 'dice': 1, 'owner': 2, 'pwr': 29}, 'def': {'name': 3, 'dice': 5, 'owner': 2, 'pwr': 10}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 3, 'dice': 1, 'owner': 2, 'pwr': 16}, 'def': {'name': 4, 'dice': 4, 'owner': 2, 'pwr': 6}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: end_turn
+DEBUG:SERVER:Current player: 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 10, 'dice': 1, 'owner': 4, 'pwr': 19}, 'def': {'name': 1, 'dice': 7, 'owner': 4, 'pwr': 8}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 9, 'dice': 1, 'owner': 4, 'pwr': 41}, 'def': {'name': 6, 'dice': 7, 'owner': 4, 'pwr': 8}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 1, 'dice': 1, 'owner': 4, 'pwr': 27}, 'def': {'name': 2, 'dice': 6, 'owner': 4, 'pwr': 7}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 12, 'dice': 1, 'owner': 4, 'pwr': 15}, 'def': {'name': 22, 'dice': 4, 'owner': 4, 'pwr': 4}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 2, 'dice': 1, 'owner': 4, 'pwr': 24}, 'def': {'name': 3, 'dice': 5, 'owner': 4, 'pwr': 7}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 3, 'dice': 1, 'owner': 4, 'pwr': 14}, 'def': {'name': 4, 'dice': 5, 'owner': 2, 'pwr': 20}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: end_turn
+DEBUG:SERVER:Current player: 1
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 16, 'dice': 1, 'owner': 1, 'pwr': 8}, 'def': {'name': 5, 'dice': 3, 'owner': 2, 'pwr': 9}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 21, 'dice': 1, 'owner': 1, 'pwr': 18}, 'def': {'name': 5, 'dice': 7, 'owner': 1, 'pwr': 6}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 5, 'dice': 1, 'owner': 1, 'pwr': 25}, 'def': {'name': 6, 'dice': 7, 'owner': 4, 'pwr': 26}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 1
+DEBUG:SERVER:Handling player 1 (dt.rand (AI)) turn
+DEBUG:SERVER:Got message from client 1; type: end_turn
+DEBUG:SERVER:Current player: 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 14, 'dice': 1, 'owner': 2, 'pwr': 7}, 'def': {'name': 12, 'dice': 2, 'owner': 4, 'pwr': 11}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 27, 'dice': 1, 'owner': 2, 'pwr': 7}, 'def': {'name': 21, 'dice': 2, 'owner': 1, 'pwr': 7}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 29, 'dice': 1, 'owner': 2, 'pwr': 5}, 'def': {'name': 21, 'dice': 2, 'owner': 1, 'pwr': 8}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: end_turn
+DEBUG:SERVER:Current player: 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 6, 'dice': 1, 'owner': 4, 'pwr': 15}, 'def': {'name': 5, 'dice': 6, 'owner': 4, 'pwr': 3}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 5, 'dice': 1, 'owner': 4, 'pwr': 30}, 'def': {'name': 29, 'dice': 5, 'owner': 4, 'pwr': 9}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 22, 'dice': 1, 'owner': 4, 'pwr': 22}, 'def': {'name': 27, 'dice': 4, 'owner': 4, 'pwr': 4}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 29, 'dice': 1, 'owner': 4, 'pwr': 20}, 'def': {'name': 21, 'dice': 4, 'owner': 4, 'pwr': 11}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+INFO:SERVER:Eliminated player 1 (dt.rand (AI))
+DEBUG:SERVER:Battle result: {'atk': {'name': 21, 'dice': 1, 'owner': 4, 'pwr': 12}, 'def': {'name': 16, 'dice': 3, 'owner': 4, 'pwr': 11}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: end_turn
+DEBUG:SERVER:Current player: 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: end_turn
+DEBUG:SERVER:Current player: 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: end_turn
+DEBUG:SERVER:Current player: 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: end_turn
+DEBUG:SERVER:Current player: 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 22, 'dice': 1, 'owner': 4, 'pwr': 29}, 'def': {'name': 14, 'dice': 7, 'owner': 4, 'pwr': 8}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 14, 'dice': 1, 'owner': 4, 'pwr': 23}, 'def': {'name': 18, 'dice': 8, 'owner': 2, 'pwr': 28}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: end_turn
+DEBUG:SERVER:Current player: 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 4, 'dice': 1, 'owner': 2, 'pwr': 32}, 'def': {'name': 3, 'dice': 7, 'owner': 2, 'pwr': 20}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 3, 'dice': 1, 'owner': 2, 'pwr': 34}, 'def': {'name': 10, 'dice': 6, 'owner': 2, 'pwr': 12}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 18, 'dice': 1, 'owner': 2, 'pwr': 26}, 'def': {'name': 14, 'dice': 7, 'owner': 2, 'pwr': 2}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 2
+DEBUG:SERVER:Handling player 2 (xforto00test (AI)) turn
+DEBUG:SERVER:Got message from client 2; type: end_turn
+DEBUG:SERVER:Current player: 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 3
+DEBUG:SERVER:Sending msg type 'end_turn' to client 2
+DEBUG:SERVER:Sending msg type 'end_turn' to client 4
+DEBUG:SERVER:Sending msg type 'end_turn' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 1, 'dice': 1, 'owner': 4, 'pwr': 27}, 'def': {'name': 10, 'dice': 7, 'owner': 4, 'pwr': 25}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 2, 'dice': 1, 'owner': 4, 'pwr': 25}, 'def': {'name': 3, 'dice': 7, 'owner': 4, 'pwr': 7}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 3, 'dice': 1, 'owner': 4, 'pwr': 24}, 'def': {'name': 4, 'dice': 6, 'owner': 4, 'pwr': 4}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+DEBUG:SERVER:Battle result: {'atk': {'name': 12, 'dice': 1, 'owner': 4, 'pwr': 35}, 'def': {'name': 14, 'dice': 6, 'owner': 4, 'pwr': 29}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+DEBUG:SERVER:Current player 4
+DEBUG:SERVER:Handling player 4 (dt.ste (AI)) turn
+DEBUG:SERVER:Got message from client 4; type: battle
+INFO:SERVER:Eliminated player 2 (xforto00test (AI))
+DEBUG:SERVER:Battle result: {'atk': {'name': 14, 'dice': 1, 'owner': 4, 'pwr': 21}, 'def': {'name': 18, 'dice': 5, 'owner': 4, 'pwr': 5}}
+DEBUG:SERVER:Sending msg type 'battle' to client 3
+DEBUG:SERVER:Sending msg type 'battle' to client 2
+DEBUG:SERVER:Sending msg type 'battle' to client 4
+DEBUG:SERVER:Sending msg type 'battle' to client 1
+INFO:SERVER:Player dt.ste (AI) (4) wins!
+DEBUG:SERVER:Sending msg type 'game_end' to client 3
+DEBUG:SERVER:Sending msg type 'game_end' to client 2
+DEBUG:SERVER:Sending msg type 'game_end' to client 4
+DEBUG:SERVER:Sending msg type 'game_end' to client 1
+DEBUG:SERVER:Closing server socket
