@@ -2,7 +2,7 @@ import numpy
 import logging
 
 from .utils import probability_of_successful_attack, sigmoid
-from .utils import possible_attacks, effortless_target_areas, get_player_largest_region
+from .utils import possible_attacks, effortless_target_areas, get_player_largest_region, get_score_current_player
 
 from dicewars.client.ai_driver import BattleCommand, EndTurnCommand
 
@@ -67,9 +67,9 @@ class AI:
         self.processed_turns_improvements = [] # list for saving improvement value for processed attacks
 
         # open files for writing trained feature vectors of attacks and class whether this attack helped us or not
-        self.f = open("./trainFiles/trainedClasses.csv","a")
-        self.g = open("./trainFiles/trainedImprovements.csv","a")
-
+        # paths to val dataset or train dataset - depends whether we extract features for train or val dataset
+        self.f = open("./valFiles/valClasses.csv","a")
+        self.g = open("./valFiles/valFeatures.csv","a")
     def ai_turn(self, board, nb_moves_this_turn, nb_turns_this_game, time_left):
         """AI agent's turn
 
@@ -105,29 +105,29 @@ class AI:
             if (len(self.processed_turns_targets) > 0):
                 #print(self.processed_turns_improvements)
                 #print(self.processed_turns_improvements[-1])
-                if (self.processed_turns_improvements[-1] != 0):
+                #if (self.processed_turns_improvements[-1] != 0):
                     #self.g.write(str(self.processed_turns_improvements[-1]) + "\n")
-                    score_player_value_float = float (turn[3])
-                    dice_player_value_float = float (turn[4])
-                    owned_fields_player_float = float (turn[5])
-                    effortless_target_areas_sum_player_float = float (turn[6])
-                    largest_region_player_float = float (turn[7])
+                score_player_value_float = float (turn[3])
+                dice_player_value_float = float (turn[4])
+                owned_fields_player_float = float (turn[5])
+                effortless_target_areas_sum_player_float = float (turn[6])
+                largest_region_player_float = float (turn[7])
 
-                    score_oponent_value_float = float (turn[8])
-                    dice_oponent_value_float = float (turn[9])
-                    owned_fields_oponent_float = float (turn[10])
-                    effortless_target_areas_sum_oponent_float = float (turn[11])
-                    largest_region_oponent_float = float (turn[12])
+                score_oponent_value_float = float (turn[8])
+                dice_oponent_value_float = float (turn[9])
+                owned_fields_oponent_float = float (turn[10])
+                effortless_target_areas_sum_oponent_float = float (turn[11])
+                largest_region_oponent_float = float (turn[12])
 
-                    # write feature vector to file of trained vectors
-                    self.g.write(str(score_player_value_float) + ", " + str(dice_player_value_float) + ", " + str(owned_fields_player_float) + ", " + str(effortless_target_areas_sum_player_float) + ", " +  str(largest_region_player_float) + ", " + str(score_oponent_value_float) + ", " + str(dice_oponent_value_float) + ", " + str(owned_fields_oponent_float) + ", " + str(effortless_target_areas_sum_oponent_float) + ", " + str(largest_region_oponent_float) + "\n")
-
-                    if (self.processed_turns_targets[-1] in owned_fields_ai_names):
-                        self.logger.debug("Attack in previous round helped us.")
-                        self.f.write("1" + "\n")
-                    else:
-                        self.logger.debug("Attack in previous round didnt help us.")
-                        self.f.write("0" + "\n")
+                # write feature vector to file of trained vectors
+                #print(str(score_player_value_float) + ", " + str(dice_player_value_float) + ", " + str(owned_fields_player_float) + ", " + str(effortless_target_areas_sum_player_float) + ", " +  str(largest_region_player_float) + ", " + str(score_oponent_value_float) + ", " + str(dice_oponent_value_float) + ", " + str(owned_fields_oponent_float) + ", " + str(effortless_target_areas_sum_oponent_float) + ", " + str(largest_region_oponent_float))
+                self.g.write(str(score_player_value_float) + ", " + str(dice_player_value_float) + ", " + str(owned_fields_player_float) + ", " + str(effortless_target_areas_sum_player_float) + ", " +  str(largest_region_player_float) + ", " + str(score_oponent_value_float) + ", " + str(dice_oponent_value_float) + ", " + str(owned_fields_oponent_float) + ", " + str(effortless_target_areas_sum_oponent_float) + ", " + str(largest_region_oponent_float) + "\n")
+                if (self.processed_turns_targets[-1] in owned_fields_ai_names):
+                    self.logger.debug("Attack in previous round helped us.")
+                    self.f.write("1" + "\n")
+                else:
+                    self.logger.debug("Attack in previous round didnt help us.")
+                    self.f.write("0" + "\n")
 
 
             # save new attack which we are ready to process to list
@@ -151,7 +151,7 @@ class AI:
 
         # get features for player's score, dice, number of owned fields, sum of effortless targets to attack
         for p in self.players_order:
-            score_player_value = self.get_score_by_player(p)
+            score_player_value = get_score_current_player(self.board, p)
             dice_player_value = self.board.get_player_dice(p)
             owned_fields_player = len(self.board.get_player_areas(p))
             effortless_target_areas_sum_player = effortless_target_areas(self.board, p)
@@ -180,7 +180,7 @@ class AI:
 
             atk_prob = probability_of_successful_attack(self.board, area_name, target.get_name())
 
-            if (increase_score or atk_power == 8) and (atk_prob > 0.35):
+            if (increase_score or atk_power == 8) and (atk_prob > 0.3):
                 new_features = []
                 for p in self.players_order:
                     idx = self.players_order.index(p)
@@ -189,7 +189,7 @@ class AI:
                         new_features.append(features[idx] + 1 if increase_score else features[idx])
 
                     elif p == opponent_name: # compute features for oponent
-                        score_oponent_value = self.get_score_by_player(p, skip_area=target.get_name())
+                        score_oponent_value = get_score_current_player(self.board, p, skip_area=target.get_name())
                         dice_oponent_value = self.board.get_player_dice(p)
                         owned_fields_oponent = len(self.board.get_player_areas(p))
                         effortless_target_areas_sum_oponent = effortless_target_areas(self.board, p)
@@ -205,9 +205,9 @@ class AI:
 
                 improvement = new_win_prob - win_prob
 
-                if improvement > -1:
+                #if improvement > -1:
                     # write neccesary info about turn (area_name, target name, calculated improvement) and also additional info about player, oponent for writing to training vector
-                    turns.append([area_name, target.get_name(), improvement, score_player_value, dice_player_value, owned_fields_player,effortless_target_areas_sum_player, largest_region_player, score_oponent_value, dice_oponent_value, owned_fields_oponent, effortless_target_areas_sum_oponent, largest_region_oponent])
+                turns.append([area_name, target.get_name(), improvement, score_player_value, dice_player_value, owned_fields_player,effortless_target_areas_sum_player, largest_region_player, score_oponent_value, dice_oponent_value, owned_fields_oponent, effortless_target_areas_sum_oponent, largest_region_oponent])
 
         return sorted(turns, key=lambda turn: turn[2], reverse=True)
 

@@ -234,3 +234,22 @@ def get_player_largest_region(board, player_name):
         for area in region:
             largest_region.append(area)
     return max_region_size
+
+def get_score_current_player(board, player_name, skip_area=None):
+    """Get score of a player
+
+    Parameters
+    ----------
+    player_name : int
+    skip_area : int
+        Name of an area to be excluded from the calculation
+
+    Returns
+    -------
+    int
+        score of the player
+    """
+    players_regions = board.get_players_regions(player_name, skip_area=skip_area)
+    max_region_size = max(len(region) for region in players_regions)
+
+    return max_region_size
