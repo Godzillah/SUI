@@ -3,15 +3,12 @@ import logging
 from sklearn import preprocessing
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import plot_roc_curve
+#import matplotlib.pyplot as plt
 
 from .utils import probability_of_successful_attack, sigmoid
 from .utils import possible_attacks, effortless_target_areas, get_player_largest_region, get_score_current_player
-
 from dicewars.client.ai_driver import BattleCommand, EndTurnCommand
-
-import matplotlib.pyplot as plt
-
-
+from .pytorchClasif import *
 
 class AI:
     """Agent using Win Probability Maximization (WPM) using player scores
@@ -68,15 +65,19 @@ class AI:
         self.trained_vectors = numpy.genfromtxt('./trainFiles/trainedImprovements.csv',dtype=float, delimiter=",")
 
         # do preprocessing of trained_vectors (more suitable for fitting MLP)
-        self.trained_vectors_preprocessed = preprocessing.scale(self.trained_vectors)
+        #self.trained_vectors_preprocessed = preprocessing.scale(self.trained_vectors)
 
         # init and train MLP MLPClassifier with vectors for training (extracted in xforto00 AI)
+        '''
         self.clf = MLPClassifier(solver='adam', alpha=1e-5, hidden_layer_sizes=(35, 35, 35), max_iter=5000000000)
         self.clf.fit(self.trained_vectors_preprocessed, self.trained_results) # train SVM with trained vectors and their results
         ax = plt.gca()
         svc_disp = plot_roc_curve(self.clf, self.trained_vectors_preprocessed, self.trained_results)
         svc_disp.plot(ax=ax, alpha=1e-5)
         plt.savefig('learn_graph.png')
+        '''
+
+        self.best_model_full, self.losses_full, self.accuracies_full, self.epochs_list_full = train_all_fea_llr(100, 0.01, 32, self.trained_vectors, self.trained_results)
 
     def ai_turn(self, board, nb_moves_this_turn, nb_turns_this_game, time_left):
         """AI agent's turn
@@ -112,6 +113,7 @@ class AI:
                 calculated_features.append([score_player_value_float, dice_player_value_float, owned_fields_player_float,effortless_target_areas_sum_player_float, largest_region_player_float, score_oponent_value_float, dice_oponent_value_float, owned_fields_oponent_float, effortless_target_areas_sum_oponent_float, largest_region_oponent_float])
 
             # do preprocessing also for trained vectors for better fitting to MLP
+            '''
             tested_vectors_preprocessed = preprocessing.scale(calculated_features)
 
             prediction = self.clf.predict_proba(tested_vectors_preprocessed) # predict results of tested vectors
@@ -122,6 +124,17 @@ class AI:
             # find the biggest proba of class 1 in all tested vectors and index of this prediction (index of this turn in turns list as well)
             best_prediction = max(prediction_list)
             best_index = prediction_list.index(best_prediction)
+            '''
+            calculated_features_array = numpy.array(calculated_features).astype(numpy.float32)
+            self.logger.debug(calculated_features_array)
+            prediction = self.best_model_full.prob_class_1(calculated_features_array)
+
+            prediction_list = prediction.tolist()
+            self.logger.debug(prediction_list)
+            # find the biggest proba of class 1 in all tested vectors and index of this prediction (index of this turn in turns list as well)
+            best_prediction = max(prediction_list)
+            best_index = prediction_list.index(best_prediction)
+            self.logger.debug(best_index)
 
 
         if turns:
