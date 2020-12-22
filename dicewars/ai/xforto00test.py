@@ -77,7 +77,7 @@ class AI:
         plt.savefig('learn_graph.png')
         '''
 
-        self.best_model_full, self.losses_full, self.accuracies_full, self.epochs_list_full = train_all_fea_llr(100, 0.01, 32, self.trained_vectors, self.trained_results)
+        self.best_model_full, self.losses_full, self.accuracies_full, self.epochs_list_full = train_all_fea_llr(100, 0.01, 128, self.trained_vectors, self.trained_results)
 
     def ai_turn(self, board, nb_moves_this_turn, nb_turns_this_game, time_left):
         """AI agent's turn
@@ -185,7 +185,7 @@ class AI:
 
             atk_prob = probability_of_successful_attack(self.board, area_name, target.get_name())
 
-            if (increase_score or atk_power == 8) and (atk_prob > 0.3):
+            if (increase_score or atk_power == 8) and (atk_prob > 0.5):
                 new_features = []
                 for p in self.players_order:
                     idx = self.players_order.index(p)
