@@ -1,9 +1,6 @@
 import numpy
 import logging
-from sklearn import preprocessing
-from sklearn.neural_network import MLPClassifier
-from sklearn.metrics import plot_roc_curve
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 from .utils import probability_of_successful_attack, sigmoid
 from .utils import possible_attacks, effortless_target_areas, get_player_largest_region, get_score_current_player
@@ -17,12 +14,9 @@ class AI:
     The agent choses such moves, that will have the highest improvement in
     the estimated probability.
 
-    This is AI used for training. Feature vectors are extracted and their class
-    is predicted based on trained MLP ANN (scikit-learn library). The possible attack
+    This is AI used for testing. Logistic Regression (with use of PyTorch) is used for classification. The possible attack
     with highest proba of class 1 is processed.
 
-    TO DO - Use some other type of MLP ANN (e.g. PyTorch), work with scikit-learn is
-    really simple and I don't know whether it is allowed.
     """
     def __init__(self, player_name, board, players_order):
         """
@@ -61,41 +55,45 @@ class AI:
         }[self.players]
 
         # generate trained vectors and their classes from csv files
-        self.trained_results = numpy.genfromtxt('./trainFiles/trainedClasses.csv',dtype=int)
-        self.trained_vectors = numpy.genfromtxt('./trainFiles/trainedImprovements.csv',dtype=float, delimiter=",")
+        self.trained_results = numpy.genfromtxt('./trainFiles/trainingClassesWithImprovement.csv',dtype=int)
+        self.trained_vectors = numpy.genfromtxt('./trainFiles/trainingFeaturesWithImprovement.csv',dtype=float, delimiter=",")
 
-        # do preprocessing of trained_vectors (more suitable for fitting MLP)
-        #self.trained_vectors_preprocessed = preprocessing.scale(self.trained_vectors)
-
-        # init and train MLP MLPClassifier with vectors for training (extracted in xforto00 AI)
-        '''
-        self.clf = MLPClassifier(solver='adam', alpha=1e-5, hidden_layer_sizes=(35, 35, 35), max_iter=5000000000)
-        self.clf.fit(self.trained_vectors_preprocessed, self.trained_results) # train SVM with trained vectors and their results
-        ax = plt.gca()
-        svc_disp = plot_roc_curve(self.clf, self.trained_vectors_preprocessed, self.trained_results)
-        svc_disp.plot(ax=ax, alpha=1e-5)
-        plt.savefig('learn_graph.png')
-        '''
-
+        # create model of logistic regression
         self.best_model_full, self.losses_full, self.accuracies_full, self.epochs_list_full = train_all_fea_llr(100, 0.01, 128, self.trained_vectors, self.trained_results)
+
+        # graphs for accuracy and loss development of logistic regression
+        '''
+        figure = plt.figure(figsize=(10, 10))
+        performance_plot = figure.add_subplot(2,1,1)
+        performance_plot.plot(self.epochs_list_full, self.accuracies_full, color = "orchid", label="accuracy development")
+        performance_plot.set_title('All Features Logistic Regression Performance', fontsize=10)
+        performance_plot.set_xlabel('Count of epochs', fontsize=8, horizontalalignment='right', x=1.0)
+        performance_plot.legend(prop={'size': 10})
+
+        performance_plot2 = figure.add_subplot(2,1,2)
+        performance_plot2.plot(self.epochs_list_full, self.losses_full, color = "indigo", label="loss development")
+        performance_plot2.set_xlabel('Count of epochs', fontsize=8, horizontalalignment='right', x=1.0)
+        performance_plot2.legend(prop={'size': 10})
+
+        plt.savefig('learn_graph_lr.png') # save graph as png
+        '''
 
     def ai_turn(self, board, nb_moves_this_turn, nb_turns_this_game, time_left):
         """AI agent's turn
         This agent estimates probability to win the game from the feature vector associated
         with the outcome of the move and chooses such that has highest improvement in the
-        probability.
+        probability. Feature vectore contains several features of our AI and also oponent,
+        on which our AI wants to attack.
         """
         self.board = board
         self.logger.debug("Looking for possible turns.")
         turns = self.possible_turns()
-        calculated_improvements = []
         calculated_features = [] # for adding trained vectors for class prediction
 
         if (turns):
             for t in turns:
                 self.logger.debug("Looking for possible turns.")
-                improvement_float = float (t[2]) * 1000000
-                calculated_improvements.append(improvement_float)
+                improvement_float = float (t[2]) * 1000
 
                 score_player_value_float = float (t[3])
                 dice_player_value_float = float (t[4])
@@ -109,22 +107,9 @@ class AI:
                 effortless_target_areas_sum_oponent_float = float (t[11])
                 largest_region_oponent_float = float (t[12])
 
-                # add all calculated features and create tested vector for MLP
-                calculated_features.append([score_player_value_float, dice_player_value_float, owned_fields_player_float,effortless_target_areas_sum_player_float, largest_region_player_float, score_oponent_value_float, dice_oponent_value_float, owned_fields_oponent_float, effortless_target_areas_sum_oponent_float, largest_region_oponent_float])
+                # add all calculated features and create tested vector for Logistic Regression
+                calculated_features.append([improvement_float, score_player_value_float, dice_player_value_float, owned_fields_player_float,effortless_target_areas_sum_player_float, largest_region_player_float, score_oponent_value_float, dice_oponent_value_float, owned_fields_oponent_float, effortless_target_areas_sum_oponent_float, largest_region_oponent_float])
 
-            # do preprocessing also for trained vectors for better fitting to MLP
-            '''
-            tested_vectors_preprocessed = preprocessing.scale(calculated_features)
-
-            prediction = self.clf.predict_proba(tested_vectors_preprocessed) # predict results of tested vectors
-            self.logger.debug(prediction)
-            # get only proba of positive class
-            predicted_positive_class_proba = prediction[:,1]
-            prediction_list = predicted_positive_class_proba.tolist()
-            # find the biggest proba of class 1 in all tested vectors and index of this prediction (index of this turn in turns list as well)
-            best_prediction = max(prediction_list)
-            best_index = prediction_list.index(best_prediction)
-            '''
             calculated_features_array = numpy.array(calculated_features).astype(numpy.float32)
             self.logger.debug(calculated_features_array)
             prediction = self.best_model_full.prob_class_1(calculated_features_array)
@@ -138,7 +123,7 @@ class AI:
 
 
         if turns:
-            turn = turns[best_index]
+            turn = turns[best_index] # find value which has biggest proba of class 1
             self.logger.debug("Possible turn: {}".format(turn))
 
             return BattleCommand(turn[0], turn[1]) # finally attack
@@ -150,11 +135,11 @@ class AI:
         """Get list of possible turns with the associated improvement
         in estimated win probability
         """
-        turns = []
+        turns = [] # list for saving filtered possible turns
 
-        features = []
+        features = [] # list for calculated features of our AI
 
-        # get features for player's score, dice, number of owned fields, sum of effortless targets to attack
+        # get features for player's score, dice, number of owned fields, sum of effortless targets to attack and size of players largest region
         for p in self.players_order:
             score_player_value = get_score_current_player(self.board, p)
             dice_player_value = self.board.get_player_dice(p)
@@ -165,35 +150,35 @@ class AI:
             sum_features_player = score_player_value + dice_player_value + owned_fields_player + effortless_target_areas_sum_player + largest_region_player # get sum of features
             features.append(sum_features_player)
 
-        win_prob = numpy.log(sigmoid(numpy.dot(numpy.array(features), self.weights)))
+        win_probability = numpy.log(sigmoid(numpy.dot(numpy.array(features), self.weights)))
 
 
         self.get_largest_region()
 
         for source, target in possible_attacks(self.board, self.player_name):
-            area_name = source.get_name()
-            atk_power = source.get_dice()
+            source_name = source.get_name()
+            source_power = source.get_dice()
 
+            oponent_name = target.get_owner_name()
             target_power = target.get_dice()
-
-            opponent_name = target.get_owner_name()
 
             increase_score = False
 
-            if area_name in self.largest_region: # increase score if actual player has the largest region
+            if (source_name in self.largest_region): # increase score if source player has the largest region
                 increase_score = True
 
-            atk_prob = probability_of_successful_attack(self.board, area_name, target.get_name())
+            successful_attack_probability = probability_of_successful_attack(self.board, source_name, target.get_name())
 
-            if (increase_score or atk_power == 8) and (atk_prob > 0.5):
-                new_features = []
+            if (increase_score or source_power == 8) and (successful_attack_probability > 0.5):
+                new_features = [] # list of new features with features of oponent
+
                 for p in self.players_order:
-                    idx = self.players_order.index(p)
+                    index = self.players_order.index(p)
 
-                    if p == self.player_name:
-                        new_features.append(features[idx] + 1 if increase_score else features[idx])
+                    if (p == self.player_name):
+                        new_features.append(features[index] + 1 if increase_score else features[index])
 
-                    elif p == opponent_name: # compute features for oponent
+                    elif (p == oponent_name): # compute features for oponent
                         score_oponent_value = get_score_current_player(self.board, p, skip_area=target.get_name())
                         dice_oponent_value = self.board.get_player_dice(p)
                         owned_fields_oponent = len(self.board.get_player_areas(p))
@@ -204,15 +189,15 @@ class AI:
                         new_features.append(sum_features_oponent)
 
                     else:
-                        new_features.append(features[idx])
+                        new_features.append(features[index])
 
-                new_win_prob = numpy.log(sigmoid(numpy.dot(numpy.array(new_features), self.weights)))
+                new_win_probability = numpy.log(sigmoid(numpy.dot(numpy.array(new_features), self.weights)))
 
-                improvement = new_win_prob - win_prob
+                # calculate final improvement
+                calculated_improvement = new_win_probability - win_probability
 
-                #if improvement > -1:
-                    # write neccesary info about turn (area_name, target name, calculated improvement) and also additional info about player, oponent for writing to testing vector
-                turns.append([area_name, target.get_name(), improvement, score_player_value, dice_player_value, owned_fields_player,effortless_target_areas_sum_player, largest_region_player, score_oponent_value, dice_oponent_value, owned_fields_oponent, effortless_target_areas_sum_oponent, largest_region_oponent])
+                # write neccesary info about turn (source_name, target name, calculated improvement) and also additional info about player, oponent for writing to testing vector
+                turns.append([source_name, target.get_name(), calculated_improvement, score_player_value, dice_player_value, owned_fields_player,effortless_target_areas_sum_player, largest_region_player, score_oponent_value, dice_oponent_value, owned_fields_oponent, effortless_target_areas_sum_oponent, largest_region_oponent])
 
         return sorted(turns, key=lambda turn: turn[2], reverse=True)
 

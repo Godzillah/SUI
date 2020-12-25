@@ -20,7 +20,7 @@ class FullLogisticRegression(torch.nn.Module):
         super().__init__()
         self.w = torch.nn.parameter.Parameter(torch.tensor([1.0]))
         self.b = torch.nn.parameter.Parameter(torch.tensor([0.0]))
-        self.hidden = torch.nn.Linear(10, 1)
+        self.hidden = torch.nn.Linear(11, 1)
 
     def forward(self, x):
         x_numpy_array = (self.hidden(x)).detach().numpy()
@@ -44,8 +44,9 @@ def train_all_fea_llr(nb_epochs, lr, batch_size, inputs, targets):
 
     dataloader = batch_provider(inputs, targets, 2)
 
-    val_results = np.genfromtxt('./valFiles/valClasses.csv',dtype=int).astype(np.float32)
-    val_vectors = np.genfromtxt('./valFiles/valFeatures.csv',dtype=float, delimiter=",")
+    # load validation vectors and their classes
+    val_results = np.genfromtxt('./valFiles/validationClassesWithImprovement.csv',dtype=int).astype(np.float32)
+    val_vectors = np.genfromtxt('./valFiles/validationFeaturesWithImprovement.csv',dtype=float, delimiter=",")
 
     for i in range(nb_epochs):
         correctly_classified = 0

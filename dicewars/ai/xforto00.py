@@ -64,12 +64,11 @@ class AI:
         }[self.players]
 
         self.processed_turns_targets = [] # list for saving targets on which we are decided to attack
-        self.processed_turns_improvements = [] # list for saving improvement value for processed attacks
 
         # open files for writing trained feature vectors of attacks and class whether this attack helped us or not
         # paths to val dataset or train dataset - depends whether we extract features for train or val dataset
-        self.f = open("./valFiles/valClasses.csv","a")
-        self.g = open("./valFiles/valFeatures.csv","a")
+        self.f = open("./valFiles/validationClassesWithImprovement.csv","a")
+        self.g = open("./valFiles/validationFeaturesWithImprovement.csv","a")
     def ai_turn(self, board, nb_moves_this_turn, nb_turns_this_game, time_left):
         """AI agent's turn
 
@@ -98,15 +97,10 @@ class AI:
 
             self.logger.debug("Printing processed turns targets")
             self.logger.debug(self.processed_turns_targets)
-            self.logger.debug("Printing processed turns improvements")
-            self.logger.debug(self.processed_turns_improvements)
 
             # check whether helped previous processed attack and attacked target is still in our areas in our next round
             if (len(self.processed_turns_targets) > 0):
-                #print(self.processed_turns_improvements)
-                #print(self.processed_turns_improvements[-1])
-                #if (self.processed_turns_improvements[-1] != 0):
-                    #self.g.write(str(self.processed_turns_improvements[-1]) + "\n")
+                improvement_float = float (turn[2]) * 1000 # multiply with constant, because improvement could be very small
                 score_player_value_float = float (turn[3])
                 dice_player_value_float = float (turn[4])
                 owned_fields_player_float = float (turn[5])
@@ -120,8 +114,7 @@ class AI:
                 largest_region_oponent_float = float (turn[12])
 
                 # write feature vector to file of trained vectors
-                #print(str(score_player_value_float) + ", " + str(dice_player_value_float) + ", " + str(owned_fields_player_float) + ", " + str(effortless_target_areas_sum_player_float) + ", " +  str(largest_region_player_float) + ", " + str(score_oponent_value_float) + ", " + str(dice_oponent_value_float) + ", " + str(owned_fields_oponent_float) + ", " + str(effortless_target_areas_sum_oponent_float) + ", " + str(largest_region_oponent_float))
-                self.g.write(str(score_player_value_float) + ", " + str(dice_player_value_float) + ", " + str(owned_fields_player_float) + ", " + str(effortless_target_areas_sum_player_float) + ", " +  str(largest_region_player_float) + ", " + str(score_oponent_value_float) + ", " + str(dice_oponent_value_float) + ", " + str(owned_fields_oponent_float) + ", " + str(effortless_target_areas_sum_oponent_float) + ", " + str(largest_region_oponent_float) + "\n")
+                self.g.write(str(improvement_float) + ", " + str(score_player_value_float) + ", " + str(dice_player_value_float) + ", " + str(owned_fields_player_float) + ", " + str(effortless_target_areas_sum_player_float) + ", " +  str(largest_region_player_float) + ", " + str(score_oponent_value_float) + ", " + str(dice_oponent_value_float) + ", " + str(owned_fields_oponent_float) + ", " + str(effortless_target_areas_sum_oponent_float) + ", " + str(largest_region_oponent_float) + "\n")
                 if (self.processed_turns_targets[-1] in owned_fields_ai_names):
                     self.logger.debug("Attack in previous round helped us.")
                     self.f.write("1" + "\n")
@@ -132,9 +125,6 @@ class AI:
 
             # save new attack which we are ready to process to list
             self.processed_turns_targets.append(turn[1])
-
-            improvement_float = float (turn[2]) * 1000000 # multiply with constant, because improvement could be very small
-            self.processed_turns_improvements.append(improvement_float)
 
             return BattleCommand(turn[0], turn[1]) # we are attacking in this round
 
@@ -180,7 +170,7 @@ class AI:
 
             atk_prob = probability_of_successful_attack(self.board, area_name, target.get_name())
 
-            if (increase_score or atk_power == 8) and (atk_prob > 0.3):
+            if (increase_score or atk_power == 8) and (atk_prob > 0.5):
                 new_features = []
                 for p in self.players_order:
                     idx = self.players_order.index(p)
