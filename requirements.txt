@@ -3,3 +3,5 @@ numpy
 pyqt5==5.14
 matplotlib
 scipy
+torch==1.6.0
+scikit-learn==0.23.2
