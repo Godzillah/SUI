@@ -1,6 +1,6 @@
 import numpy
 import logging
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 from .utils import probability_of_successful_attack, sigmoid
 from .utils import possible_attacks, effortless_target_areas, get_player_largest_region, get_score_current_player
