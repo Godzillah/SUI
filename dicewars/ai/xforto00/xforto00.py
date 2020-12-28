@@ -8,14 +8,22 @@ from dicewars.client.ai_driver import BattleCommand, EndTurnCommand
 from .pytorchClasif import *
 
 class AI:
-    """Agent using Win Probability Maximization (WPM) using player scores
+    """Agent using Win Probability Maximization (WPM).
     This agent estimates win probability given the current state of the game.
-    As a feature to describe the state, a vector of players' scores is used.
-    The agent choses such moves, that will have the highest improvement in
-    the estimated probability.
+    As a feature to describe the state, a vector of interesting features
+    such as score, dice count, count of effortless areas to attack, size of largest region, owned fields sum
+    is used. Final improvement is calculated and also put to the testing vector.
 
-    This is AI used for testing. Logistic Regression (with use of PyTorch) is used for classification. The possible attack
-    with highest proba of class 1 is processed.
+    This is AI used for testing. Logistic Regression (with use of PyTorch) is used for classification.
+    The possible attack with highest proba of class 1 is processed.
+
+    Classes are 0 or 1.
+
+    For each processed attack we decided in training AI in next round, whether area on which we attacked
+    is in our regions or some oponent took it from us.
+
+    Class 1 - Area is still in our regions.
+    Class 0 - Area was won by someone else.
 
     """
     def __init__(self, player_name, board, players_order):
@@ -42,7 +50,7 @@ class AI:
         while self.player_name != self.players_order[0]:
             self.players_order.append(self.players_order.pop(0))
 
-        mu, sigma = 0, 1 # mean and standard deviation, randomly init weights of ANN
+        mu, sigma = 0, 1 # mean and standard deviation, randomly init weights
 
         self.weights = {
             2: numpy.random.normal(mu, sigma, size=(2)),
@@ -55,14 +63,15 @@ class AI:
         }[self.players]
 
         # generate trained vectors and their classes from csv files
-        self.trained_results = numpy.genfromtxt('./trainFiles/trainingClassesWithImprovement.csv',dtype=int)
-        self.trained_vectors = numpy.genfromtxt('./trainFiles/trainingFeaturesWithImprovement.csv',dtype=float, delimiter=",")
+        self.trained_results = numpy.genfromtxt('./dicewars/ai/xforto00/trainFiles/trainingClassesWithImprovement.csv',dtype=int)
+        self.trained_vectors = numpy.genfromtxt('./dicewars/ai/xforto00/trainFiles/trainingFeaturesWithImprovement.csv',dtype=float, delimiter=",")
 
         # create model of logistic regression
         self.best_model_full, self.losses_full, self.accuracies_full, self.epochs_list_full = train_all_fea_llr(100, 0.01, 128, self.trained_vectors, self.trained_results)
 
         # graphs for accuracy and loss development of logistic regression
         '''
+
         figure = plt.figure(figsize=(10, 10))
         performance_plot = figure.add_subplot(2,1,1)
         performance_plot.plot(self.epochs_list_full, self.accuracies_full, color = "orchid", label="accuracy development")
@@ -75,15 +84,16 @@ class AI:
         performance_plot2.set_xlabel('Count of epochs', fontsize=8, horizontalalignment='right', x=1.0)
         performance_plot2.legend(prop={'size': 10})
 
-        plt.savefig('learn_graph_lr.png') # save graph as png
+        plt.savefig('./dicewars/ai/xforto00/learn_graph_lr.png') # save graph as png
         '''
+
 
     def ai_turn(self, board, nb_moves_this_turn, nb_turns_this_game, time_left):
         """AI agent's turn
         This agent estimates probability to win the game from the feature vector associated
-        with the outcome of the move and chooses such that has highest improvement in the
-        probability. Feature vectore contains several features of our AI and also oponent,
-        on which our AI wants to attack.
+        with the outcome of the move. Feature vector contains several features about state of game and calculated improvement.
+        After filtering of interesting attacks, we did not attack to the one with best improvement but let the trained model of Logistic Regression
+        decide.
         """
         self.board = board
         self.logger.debug("Looking for possible turns.")
@@ -92,8 +102,7 @@ class AI:
 
         if (turns):
             for t in turns:
-                self.logger.debug("Looking for possible turns.")
-                improvement_float = float (t[2]) * 1000
+                improvement_float = float (t[2]) * 1000 # calculated_improvement_mul
 
                 score_player_value_float = float (t[3])
                 dice_player_value_float = float (t[4])
@@ -111,10 +120,12 @@ class AI:
                 calculated_features.append([improvement_float, score_player_value_float, dice_player_value_float, owned_fields_player_float,effortless_target_areas_sum_player_float, largest_region_player_float, score_oponent_value_float, dice_oponent_value_float, owned_fields_oponent_float, effortless_target_areas_sum_oponent_float, largest_region_oponent_float])
 
             calculated_features_array = numpy.array(calculated_features).astype(numpy.float32)
-            self.logger.debug(calculated_features_array)
+            self.logger.debug(calculated_features_array) # show in debug calculated array of features
+            # make prediction with model of LR
             prediction = self.best_model_full.prob_class_1(calculated_features_array)
 
             prediction_list = prediction.tolist()
+            # show in debug list of predictions
             self.logger.debug(prediction_list)
             # find the biggest proba of class 1 in all tested vectors and index of this prediction (index of this turn in turns list as well)
             best_prediction = max(prediction_list)
@@ -133,11 +144,11 @@ class AI:
 
     def possible_turns(self):
         """Get list of possible turns with the associated improvement
-        in estimated win probability
+        in estimated win probability and other calculated features which are used as feature vector for prediction
         """
         turns = [] # list for saving filtered possible turns
 
-        features = [] # list for calculated features of our AI
+        features = [] # list for calculated features before filtering of possible attacks
 
         # get features for player's score, dice, number of owned fields, sum of effortless targets to attack and size of players largest region
         for p in self.players_order:
@@ -156,21 +167,24 @@ class AI:
         self.get_largest_region()
 
         for source, target in possible_attacks(self.board, self.player_name):
+            # player who wants to attack to the area
             source_name = source.get_name()
             source_power = source.get_dice()
 
+            # currently owns and defends the area
             oponent_name = target.get_owner_name()
             target_power = target.get_dice()
 
             increase_score = False
 
-            if (source_name in self.largest_region): # increase score if source player has the largest region
+            if (source_name in self.largest_region): # increase score if source area id is in largest region
                 increase_score = True
 
             successful_attack_probability = probability_of_successful_attack(self.board, source_name, target.get_name())
 
+            # filter only interesting places to attack
             if (increase_score or source_power == 8) and (successful_attack_probability > 0.5):
-                new_features = [] # list of new features with features of oponent
+                new_features = [] # list of new features with use of features of oponent
 
                 for p in self.players_order:
                     index = self.players_order.index(p)

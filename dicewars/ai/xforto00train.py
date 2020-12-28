@@ -67,8 +67,8 @@ class AI:
 
         # open files for writing trained feature vectors of attacks and class whether this attack helped us or not
         # paths to val dataset or train dataset - depends whether we extract features for train or val dataset
-        self.f = open("./valFiles/validationClassesWithImprovement.csv","a")
-        self.g = open("./valFiles/validationFeaturesWithImprovement.csv","a")
+        self.f = open("./dicewars/ai/xforto00/valFiles/validationClassesWithImprovement.csv","a")
+        self.g = open("./dicewars/ai/xforto00/valFiles/validationFeaturesWithImprovement.csv","a")
     def ai_turn(self, board, nb_moves_this_turn, nb_turns_this_game, time_left):
         """AI agent's turn
 

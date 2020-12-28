@@ -1,7 +1,5 @@
 import numpy as np
 import copy
-import scipy.stats
-import torch
 
 import torch
 import torch.nn.functional as F
@@ -45,8 +43,8 @@ def train_all_fea_llr(nb_epochs, lr, batch_size, inputs, targets):
     dataloader = batch_provider(inputs, targets, 2)
 
     # load validation vectors and their classes
-    val_results = np.genfromtxt('./valFiles/validationClassesWithImprovement.csv',dtype=int).astype(np.float32)
-    val_vectors = np.genfromtxt('./valFiles/validationFeaturesWithImprovement.csv',dtype=float, delimiter=",")
+    val_results = np.genfromtxt('./dicewars/ai/xforto00/valFiles/validationClassesWithImprovement.csv',dtype=int).astype(np.float32)
+    val_vectors = np.genfromtxt('./dicewars/ai/xforto00/valFiles/validationFeaturesWithImprovement.csv',dtype=float, delimiter=",")
 
     for i in range(nb_epochs):
         correctly_classified = 0
