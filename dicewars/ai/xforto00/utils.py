@@ -1,5 +1,6 @@
 import numpy
 from dicewars.client.game.board import Board
+from dicewars.client.game.area import Area
 from typing import Iterator, Tuple
 import pickle
 
@@ -159,7 +160,7 @@ def attack_succcess_probability(atk, df):
     }[atk][df]
 
 
-def possible_attacks(board: Board, player_name: int) -> Iterator[Tuple[int, int]]:
+def possible_attacks(board: Board, player_name: int) -> Iterator[Tuple[Area, Area]]:
     for area in board.get_player_border(player_name):
         if not area.can_attack():
             continue
