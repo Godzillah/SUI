@@ -8,23 +8,23 @@ from dicewars.client.ai_driver import BattleCommand, EndTurnCommand
 
 
 class AI:
-    """Agent using Win Probability Maximization (WPM) using player scores
-
+    """Agent using Win Probability Maximization (WPM).
     This agent estimates win probability given the current state of the game.
-    As a feature to describe the state, a vector of players' scores is used.
-    The agent choses such moves, that will have the highest improvement in
-    the estimated probability.
+    As a feature to describe the state, a vector of interesting features
+    such as score, dice count, count of effortless areas to attack, size of largest region, owned fields sum
+    is used. Final improvement is calculated and also put to the testing vector.
 
-    This is AI used for training and getting trained vectors for MLP ANN for xforto00test,
-    normally trained on tournament for 4 players, 50 games.
+    This is AI used for training and getting validation or training vectors.
 
     Classes are 0 or 1.
 
-    For each processed attack we decide in next round, whether area on which we attacked
+    For each processed attack we decided in training AI in next round, whether area on which we attacked
     is in our regions or some oponent took it from us.
 
     Class 1 - Area is still in our regions.
     Class 0 - Area was won by someone else.
+
+    Important - This is AI which could reproduce training or validation files used for final xforto00 AI!
     """
     def __init__(self, player_name, board, players_order):
         """
@@ -67,14 +67,16 @@ class AI:
 
         # open files for writing trained feature vectors of attacks and class whether this attack helped us or not
         # paths to val dataset or train dataset - depends whether we extract features for train or val dataset
+        # append new training or validation vectors to files which are then used by xforto00 AI.
         self.f = open("./dicewars/ai/xforto00/valFiles/validationClassesWithImprovement.csv","a")
         self.g = open("./dicewars/ai/xforto00/valFiles/validationFeaturesWithImprovement.csv","a")
+        #self.f = open("./dicewars/ai/xforto00/trainFiles/trainingClassesWithImprovement.csv","a")
+        #self.g = open("./dicewars/ai/xforto00/trainFiles/trainingFeaturesWithImprovement.csv","a")
     def ai_turn(self, board, nb_moves_this_turn, nb_turns_this_game, time_left):
         """AI agent's turn
-
         This agent estimates probability to win the game from the feature vector associated
-        with the outcome of the move and chooses such that has highest improvement in the
-        probability.
+        with the outcome of the move. Feature vector contains several features about state of game and calculated improvement.
+        After filtering of interesting attacks, we attack to the one with best improvement and write vector and class to train/validation files..
         """
         self.board = board
         self.logger.debug("Looking for possible turns.")
@@ -113,7 +115,7 @@ class AI:
                 effortless_target_areas_sum_oponent_float = float (turn[11])
                 largest_region_oponent_float = float (turn[12])
 
-                # write feature vector to file of trained vectors
+                # write feature vector to file of trained or validation vectors
                 self.g.write(str(improvement_float) + ", " + str(score_player_value_float) + ", " + str(dice_player_value_float) + ", " + str(owned_fields_player_float) + ", " + str(effortless_target_areas_sum_player_float) + ", " +  str(largest_region_player_float) + ", " + str(score_oponent_value_float) + ", " + str(dice_oponent_value_float) + ", " + str(owned_fields_oponent_float) + ", " + str(effortless_target_areas_sum_oponent_float) + ", " + str(largest_region_oponent_float) + "\n")
                 if (self.processed_turns_targets[-1] in owned_fields_ai_names):
                     self.logger.debug("Attack in previous round helped us.")
@@ -135,11 +137,11 @@ class AI:
         """Get list of possible turns with the associated improvement
         in estimated win probability
         """
-        turns = []
+        turns = [] # list for saving filtered possible turns
 
-        features = []
+        features = [] # list for calculated features before filtering of possible attacks
 
-        # get features for player's score, dice, number of owned fields, sum of effortless targets to attack
+        # get features for player's score, dice, number of owned fields, sum of effortless targets to attack and size of players largest region
         for p in self.players_order:
             score_player_value = get_score_current_player(self.board, p)
             dice_player_value = self.board.get_player_dice(p)
@@ -150,35 +152,38 @@ class AI:
             sum_features_player = score_player_value + dice_player_value + owned_fields_player + effortless_target_areas_sum_player + largest_region_player # get sum of features
             features.append(sum_features_player)
 
-        win_prob = numpy.log(sigmoid(numpy.dot(numpy.array(features), self.weights)))
+        win_probability = numpy.log(sigmoid(numpy.dot(numpy.array(features), self.weights)))
 
 
         self.get_largest_region()
 
         for source, target in possible_attacks(self.board, self.player_name):
-            area_name = source.get_name()
-            atk_power = source.get_dice()
+            # player who wants to attack to the area
+            source_name = source.get_name()
+            source_power = source.get_dice()
 
+            # currently owns and defends the area
+            oponent_name = target.get_owner_name()
             target_power = target.get_dice()
-
-            opponent_name = target.get_owner_name()
 
             increase_score = False
 
-            if area_name in self.largest_region: # increase score if actual player has the largest region
+            if (source_name in self.largest_region): # increase score if source area id is in largest region
                 increase_score = True
 
-            atk_prob = probability_of_successful_attack(self.board, area_name, target.get_name())
+            successful_attack_probability = probability_of_successful_attack(self.board, source_name, target.get_name())
 
-            if (increase_score or atk_power == 8) and (atk_prob > 0.5):
-                new_features = []
+            # filter only interesting places to attack
+            if (increase_score or source_power == 8) and (successful_attack_probability > 0.5):
+                new_features = [] # list of new features with use of features of oponent
+
                 for p in self.players_order:
-                    idx = self.players_order.index(p)
+                    index = self.players_order.index(p)
 
-                    if p == self.player_name:
-                        new_features.append(features[idx] + 1 if increase_score else features[idx])
+                    if (p == self.player_name):
+                        new_features.append(features[index] + 1 if increase_score else features[index])
 
-                    elif p == opponent_name: # compute features for oponent
+                    elif (p == oponent_name): # compute features for oponent
                         score_oponent_value = get_score_current_player(self.board, p, skip_area=target.get_name())
                         dice_oponent_value = self.board.get_player_dice(p)
                         owned_fields_oponent = len(self.board.get_player_areas(p))
@@ -189,15 +194,15 @@ class AI:
                         new_features.append(sum_features_oponent)
 
                     else:
-                        new_features.append(features[idx])
+                        new_features.append(features[index])
 
-                new_win_prob = numpy.log(sigmoid(numpy.dot(numpy.array(new_features), self.weights)))
+                new_win_probability = numpy.log(sigmoid(numpy.dot(numpy.array(new_features), self.weights)))
 
-                improvement = new_win_prob - win_prob
+                # calculate final improvement
+                calculated_improvement = new_win_probability - win_probability
 
-                #if improvement > -1:
-                    # write neccesary info about turn (area_name, target name, calculated improvement) and also additional info about player, oponent for writing to training vector
-                turns.append([area_name, target.get_name(), improvement, score_player_value, dice_player_value, owned_fields_player,effortless_target_areas_sum_player, largest_region_player, score_oponent_value, dice_oponent_value, owned_fields_oponent, effortless_target_areas_sum_oponent, largest_region_oponent])
+                # write neccesary info about turn (source_name, target name, calculated improvement) and also additional info about player, oponent for writing to testing vector
+                turns.append([source_name, target.get_name(), calculated_improvement, score_player_value, dice_player_value, owned_fields_player,effortless_target_areas_sum_player, largest_region_player, score_oponent_value, dice_oponent_value, owned_fields_oponent, effortless_target_areas_sum_oponent, largest_region_oponent])
 
         return sorted(turns, key=lambda turn: turn[2], reverse=True)
 
